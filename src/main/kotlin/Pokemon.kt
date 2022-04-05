@@ -8,10 +8,10 @@ open class Pokemon(var especie: String) {
         var ataqueEfetivo = ataque * 1.3
         vida - ataqueEfetivo
 
-        println("${nome} perdeu ${ataqueEfetivo} pontos de vida")
+        println("$nome perdeu $ataqueEfetivo pontos de vida")
 
         if (vida <= 0) {
-            println("${nome} foi derrotado")
+            println("$nome foi derrotado")
             return true
         } else {
             return false
@@ -20,17 +20,17 @@ open class Pokemon(var especie: String) {
 }
 
 class PokemonEletrico : Pokemon("Eletrico") {
-    val opcoesPokemonEletrico = listOf<String>("Zeraora", "Pikachu", "Helioptile", "Tynamo")
+    val opcoesPokemonEletrico: Set<String> = setOf("Zeraora", "Pikachu", "Helioptile", "Tynamo")
     override var nome = opcoesPokemonEletrico.random()
 }
 
 class PokemonFogo : Pokemon("Fogo") {
-    val opcoesPokemonFogo = listOf<String>("Growlithe", "Vulpix", "Oricorio", "Charmander")
+    val opcoesPokemonFogo: Set<String> = setOf("Growlithe", "Vulpix", "Oricorio", "Charmander")
     override var nome = opcoesPokemonFogo.random()
 }
 
 class PokemonAgua : Pokemon("Agua") {
-    val opcoesPokemonAgua = listOf<String>("Psyduck", "Blastoise", "Poliwhirl", "Poliwag")
+    val opcoesPokemonAgua: Set<String> = setOf("Psyduck", "Blastoise", "Poliwhirl", "Poliwag")
     override var nome = opcoesPokemonAgua.random()
 }
 
